@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='vim的最常用配置'><title>vim configuration</title>
+
+<link rel='canonical' href='https://autumorn.github.io/p/vim-configuration/'>
+
+<link rel="stylesheet" href="/scss/style.min.3be45f5be448a8c8f5e84638f247406acccec480e1db6a2597afd26f660ebbf3.css"><meta property='og:title' content='vim configuration'>
+<meta property='og:description' content='vim的最常用配置'>
+<meta property='og:url' content='https://autumorn.github.io/p/vim-configuration/'>
+<meta property='og:site_name' content='田园'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='工具' /><meta property='article:published_time' content='2020-09-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-09-09T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="vim configuration">
+<meta name="twitter:description" content="vim的最常用配置">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu37bd828fc869adbb5717c9ec27afb4f4_40243_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">田园</a></h1>
+            <h2 class="site-description">悟已往之不諌,知来者之可追</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/autumorn/'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://autumorn.github.io/en/" >English</option>
+                        
+                            <option value="https://autumorn.github.io/" selected>中文</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E9%85%8D%E7%BD%AE/" >
+                配置
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/vim-configuration/">vim configuration</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            vim的最常用配置
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 09, 2020</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h3 id="基本配置">基本配置</h3>
+<p>vim在不安装组件的情况下拥有很多基本的功能，首先我们需要对常用的基本配置进行设置，基本配置已经足够日常使用，基本配置及其相关注释如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&#34; Basic Settings
+set nocompatible
+&#34; detect file type
+filetype on
+&#34; load plugin for detected file type
+filetype plugin on
+&#34; load indent file for detected file type
+filetype indent on
+&#34; syntax highlight
+syntax on
+set encoding=UTF-8
+&#34; Add numbers to each line on the left-hand side.
+set number
+&#34; highlight current line
+set cursorline
+&#34; Set shift width to 4 spaces.
+set shiftwidth=2
+&#34; Set tab width to 4 columns.
+set tabstop=4
+&#34; Use space characters instead of tabs.
+set expandtab
+&#34; Set indent style
+set cindent
+set smartindent
+set autoindent
+&#34; Do not save backup files.
+set nobackup
+&#34; Do not let cursor scroll below or above N number of lines when scrolling.
+set scrolloff=10
+
+&#34; set font
+set guifont=DroidSansMono_Nerd_Font:h11
+
+&#34; Use highlighting when doing a search.
+set hlsearch
+&#34; While searching though a file incrementally highlight matching characters as you type.
+set incsearch
+&#34; Ignore capital letters during search.
+set ignorecase
+&#34; Override the ignorecase option if searching for capital letters.
+&#34; This will allow you to search specifically for capital letters.
+set smartcase
+
+&#34; Show partial command you type in the last line of the screen.
+set showcmd
+&#34; Show the mode you are on the last line.
+set showmode
+&#34; Show matching words during a search.
+set showmatch
+
+&#34; Set the commands to save in history default number is 20.
+set history=1000
+&#34; Enable auto completion menu after pressing TAB.
+set wildmenu
+&#34; Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+&#34; There are certain files that we would never want to edit with Vim.
+&#34; Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="插件安装">插件安装</h3>
+<p>使用<a class="link" href="https://github.com/junegunn/vim-plug"  target="_blank" rel="noopener"
+    >vim_plug</a>插件管理器，并在vimrc配置文件中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&#34; -------------------------------- Plugin -------------------------------------------
+&#34; Specify a directory for plugins
+&#34; - For Neovim: stdpath(&#39;data&#39;) . &#39;/plugged&#39;
+&#34; - Avoid using standard Vim directory names like &#39;plugin&#39;
+call plug#begin(&#39;~/.vim/plugged&#39;)
+
+
+
+&#34; Initialize plugin system
+call plug#end()
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="常用插件及管理">常用插件及管理</h4>
+<p>将插件的名称与github上的仓库加入call plugin begin 与 end之间即可， 然后打开vim使用PlugInstall进行安装，插件管理命令如下所示：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PlugInstall [name &hellip;] [#threads]</td>
+<td>Install plugins</td>
+</tr>
+<tr>
+<td>PlugUpdate [name &hellip;] [#threads]</td>
+<td>Install or update plugins</td>
+</tr>
+<tr>
+<td>PlugClean[!]</td>
+<td>Remove unlisted plugins (bang version will clean without prompt)</td>
+</tr>
+<tr>
+<td>PlugUpgrade</td>
+<td>Upgrade vim-plug itself</td>
+</tr>
+<tr>
+<td>PlugStatus</td>
+<td>Check the status of plugins</td>
+</tr>
+<tr>
+<td>PlugDiff</td>
+<td>Examine changes from the previous update and the pending changes</td>
+</tr>
+</tbody>
+</table></div>
+<h5 id="nerdtree">NERDTree</h5>
+<p>主要安装NERDTree以及git组件，可以在目录中显示git状态，加入如下两行代码进行安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Plug &#39;scrooloose/nerdtree&#39;, { &#39;on&#39;:  &#39;NERDTreeToggle&#39; }
+Plug &#39;Xuyuanp/nerdtree-git-plugin&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>插件相关配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&#34; set NerdTree plugin
+nnoremap &lt;leader&gt;n :NERDTreeFocus&lt;CR&gt;
+nnoremap &lt;C-n&gt; :NERDTree&lt;CR&gt;
+nnoremap &lt;C-t&gt; :NERDTreeToggle&lt;CR&gt;
+&#34; nnoremap &lt;C-f&gt; :NERDTreeFind&lt;CR&gt;
+
+&#34; Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 &amp;&amp; isdirectory(argv()[0]) &amp;&amp; !exists(&#39;s:std_in&#39;) |
+    \ execute &#39;NERDTree&#39; argv()[0] | wincmd p | enew | execute &#39;cd &#39;.argv()[0] | endif
+&#34; Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr(&#39;$&#39;) == 1 &amp;&amp; winnr(&#39;$&#39;) == 1 &amp;&amp; exists(&#39;b:NERDTree&#39;) &amp;&amp; b:NERDTree.isTabTree() | quit | endif
+&#34; Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr(&#39;$&#39;) == 1 &amp;&amp; exists(&#39;b:NERDTree&#39;) &amp;&amp; b:NERDTree.isTabTree() | quit | endif
+&#34; Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() &gt; 0 || exists(&#34;s:std_in&#34;) | wincmd p | endif
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="taglist">Taglist</h4>
+<p>功能：利用ctags生成当前文件所有的类以及类型符号
+使用taglist需要满足的条件有：</p>
+<ul>
+<li>打开文件的自己检测功能：filetype on</li>
+<li>系统中安装exuberant ctags工具</li>
+<li>并且vim支持system()调用</li>
+</ul>
+<p>然后在vimrc中添加安装taglist的地址：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Plug &#39;vim-scripts/taglist.vim&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>安装之后进行相关的配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&#34; set TagList plugin
+let Tlist_Ctags_Cmd=&#34;/usr/local/bin/ctags&#34;
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Show_One_File = 1
+&#34; let Tlist_Sort_Type = &#34;name&#34;
+let Tlist_Auto_Open = 1
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="delimitmate">DelimitMate</h4>
+<p>功能：自动匹配括号与引号
+安装地址及相关配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Plug &#39;Raimondi/delimitMate&#39;
+
+&#34; set DelimitMate plugin
+&#34; close auto close function
+&#34; let b:delimitMate_autoclose = 0
+&#34; close auto close function for python files
+&#34; au FileType python let b:delimitMate_autoclose = 0
+let delimitMate_expand_cr = 1
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="ctags--cscope--srcexpl">ctags &amp; cscope &amp; srcexpl</h4>
+<p>功能：跳转功能的实现，方便在编写代码的时候查看类或者其它结构的实现
+安装srcexpl插件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Plug &#39;wenlongche/SrcExpl&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>安装后的配置如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="s2">&#34; set ctags generation and path
+</span><span class="s2">function Generate_cstag()
+</span><span class="s2">  if(executable(&#39;cscope&#39;) &amp;&amp; has(&#34;</span><span class="n">cscope</span><span class="s2">&#34;))
+</span><span class="s2">    silent! execute &#34;</span><span class="o">!</span><span class="n">find</span><span class="w"> </span><span class="o">-</span><span class="n">L</span><span class="w"> </span><span class="o">`</span><span class="n">pwd</span><span class="o">`</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.h&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.c&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.cc&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.cpp&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.java&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.cxx&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.hxx&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.hpp&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">-</span><span class="n">name</span><span class="w"> </span><span class="s1">&#39;*.py&#39;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">cscope</span><span class="p">.</span><span class="n">files</span><span class="s2">&#34;
+</span><span class="s2">  endif
+</span><span class="s2">  silent! execute &#34;</span><span class="o">!</span><span class="n">ctags</span><span class="w"> </span><span class="o">-</span><span class="n">L</span><span class="w"> </span><span class="n">cscope</span><span class="p">.</span><span class="n">files</span><span class="s2">&#34;
+</span><span class="s2">  silent! execute &#34;</span><span class="o">!</span><span class="n">cscope</span><span class="w"> </span><span class="o">-</span><span class="n">bkq</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">cscope</span><span class="p">.</span><span class="n">files</span><span class="s2">&#34;
+</span><span class="s2">  silent! execute &#34;</span><span class="k">call</span><span class="w"> </span><span class="nf">Add_cstag</span><span class="p">()</span><span class="s2">&#34;
+</span><span class="s2">endf
+</span><span class="s2">
+</span><span class="s2">function Add_cstag()
+</span><span class="s2">  if filereadable(&#34;</span><span class="n">cscope</span><span class="p">.</span><span class="k">out</span><span class="s2">&#34;)
+</span><span class="s2">    execute &#34;</span><span class="n">cs</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">cscope</span><span class="p">.</span><span class="k">out</span><span class="s2">&#34;
+</span><span class="s2">    execute &#34;</span><span class="kt">set</span><span class="w"> </span><span class="n">tags</span><span class="o">+=</span><span class="p">.</span><span class="o">/</span><span class="n">tags</span><span class="s2">&#34;
+</span><span class="s2">  endif
+</span><span class="s2">endf
+</span><span class="s2">
+</span><span class="s2">silent! execute &#34;</span><span class="k">call</span><span class="w"> </span><span class="nf">Add_cstag</span><span class="p">()</span><span class="s2">&#34;
+</span><span class="s2">
+</span><span class="s2">map &lt;F10&gt; :call Generate_cstag()&lt;CR&gt;
+</span><span class="s2">map &lt;F10&gt;&lt;F10&gt; :call Add_cstag()&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;s :cs find s &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;g :cs find g &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;c :cs find c &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;t :cs find t &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;e :cs find e &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;f :cs find f &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;i :cs find i &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">nmap &lt;C-\&gt;d :cs find d &lt;C-R&gt;=expand(&#34;</span><span class="o">&lt;</span><span class="n">cword</span><span class="o">&gt;</span><span class="s2">&#34;)&lt;CR&gt;&lt;CR&gt;
+</span><span class="s2">
+</span><span class="s2">&#34;</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">srcexpl</span><span class="w"> </span><span class="n">plugin</span><span class="w">
+</span><span class="w"></span><span class="n">nmap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">F8</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">SrcExplToggle</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_winHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_refreshTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_jumpKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&#34;&lt;ENTER&gt;&#34;</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_gobackKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&#34;&lt;SPACE&gt;&#34;</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_searchLocalDef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_isUpdateTags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_updateTagsCmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&#34;ctags --sort=foldcase -R .&#34;</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_updateTagsKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&#34;&lt;F12&gt;&#34;</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_prevDefKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&#34;&lt;F3&gt;&#34;</span><span class="w">
+</span><span class="w"></span><span class="n">let</span><span class="w"> </span><span class="n">g</span><span class="p">:</span><span class="n">SrcExpl_nextDefKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&#34;&lt;F4&gt;&#34;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 田园
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#基本配置">基本配置</a></li>
+        <li><a href="#插件安装">插件安装</a>
+          <ol>
+            <li><a href="#常用插件及管理">常用插件及管理</a></li>
+            <li><a href="#taglist">Taglist</a></li>
+            <li><a href="#delimitmate">DelimitMate</a></li>
+            <li><a href="#ctags--cscope--srcexpl">ctags &amp; cscope &amp; srcexpl</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
